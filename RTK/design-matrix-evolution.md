@@ -6,12 +6,12 @@ description: 从伪距单差到载波相位双差，设计矩阵A的变换
 
 方程：忽略电离层等
 $$
-\begin{align}
+\begin{align*}
 \rho_i &= r_i + c\cdot dt + \epsilon_i \\
  &= \sqrt{(x_r-x^s)^2 + (y_r-y^s)^2 + (z_r-z^s)^2} + c\cdot dt + \epsilon_i \\
  &= ||p_r -p^s|| + c\cdot dt + \epsilon_i \\
  &= f(\chi)
-\end{align}
+\end{align*}
 $$
 
 $$
@@ -26,10 +26,10 @@ $$
 $$
 这里的$$A$$ 就是：
 $$
-\begin{align}
+\begin{align*}
 A = \frac{\partial \Rho}{\partial \Chi}_{|\Chi=\Chi_0} &= [\frac{||p_r -p^s||}{\partial x}_{|x=x_0}~~\frac{||p_r -p^s||}{\partial y}_{|y=y_0}~~\frac{||p_r -p^s||}{\partial z}_{|z=z_0}~~1] \\
 &= [\frac{x_0-x^s}{r} ~~ \frac{y_0-y^s}{r} ~~\frac{z_0-z^s}{r} ~~1]
-\end{align}
+\end{align*}
 $$
 
 ## 双差
@@ -37,10 +37,10 @@ $$
 方程：（注意相位已经转换成距离量）
 
 $$
-\begin{align}
+\begin{align*}
 \Phi_{DD} &= R_{DD} + \lambda \cdot N_{DD} -  c\cdot dt+ \varepsilon_{DD} = f(p_r, N_{DD}) = f(\Chi)\\
 \Rho_{DD} &= R_{DD} -  c\cdot dt+ \epsilon_{DD} = h(p_r) \\
-\end{align}
+\end{align*}
 $$
 
 注意到有：
@@ -64,7 +64,7 @@ $$
 $$
 所以完整的载波相位双差方程的设计矩阵：
 
-<img src="https://cdn.jsdelivr.net/gh/zvictorliu/typoraPics@main/img/2023/12/13/95d6b0d1cc35a9377cfa99fe3b536add-image-20231213133942697-cf121b.png" alt="image-20231213133942697" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/zvictorliu/typoraPics@main/img/2023/12/13/95d6b0d1cc35a9377cfa99fe3b536add-image-20231213133942697-cf121b.png" alt="image-20231213133942697" style="zoom:100%;" />
 
 ## 浮点解
 
@@ -82,3 +82,4 @@ $$
 考虑到非线性最小二乘需要一个已知的点，所以一般用的是`EKF`
 
 这就涉及到EKF与N-WLS的区别与联系了
+
